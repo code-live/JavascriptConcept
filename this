@@ -28,3 +28,29 @@ console.log(obj);
 */					
 
 -------------------------------------------------------------------------------------------------
+
+(function() {
+
+	  function f3() {  
+	    return this;
+	  }
+	  f3.call(this) === window; // return true
+
+	  function f4() {
+	    this.herp = 'derp';
+	    console.log(this);				// f4 = {herp: "derp"}
+	  }
+	  var a = 30;
+	  function Thing() {
+	    this.thisIsEasyToUnderstand = 'just kidding';
+	    console.log(this); 				// thing = {thisIsEasyToUnderstand: 'just kidding'};
+	    f4.call(this);
+	    console.log(this);				// thing = {thisIsEasyToUnderstand: 'just kidding', herp: 'derp'};
+	  }
+	  var thing = new Thing(); 
+	  	  // thing = {thisIsEasyToUnderstand: 'just kidding', herp: 'derp'};
+	  var f4 = new f4();
+	  	 // f4 = {herp: "derp"}
+	})();
+
+-------------------------------------------------------------------------------------------------	
