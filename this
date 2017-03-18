@@ -1,0 +1,30 @@
+----------------------Creation of Class and prototype------------------------------------
+
+function bar() {
+	var x = 11;									// private variable
+	this.check =  true;							// public variables
+	this.getName = function() {
+		console.log(this.check);
+	}
+}
+
+bar.prototype.common = function () { 			// javascript prototype function 
+	console.log(this.check);					// it has access of current "this" 
+	// this will print true
+	// it is part of class 
+}
+
+var obj = new bar();							// new instance creation
+obj.getName();									// accessing class method using obj instance
+
+console.log(obj);	
+/*
+		barcheck: true
+		getName: ()
+		__proto__: Object
+		common: ()
+		constructor: bar()
+		__proto__: Object
+*/					
+
+-------------------------------------------------------------------------------------------------
