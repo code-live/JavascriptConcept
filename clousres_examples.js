@@ -85,3 +85,29 @@ var blabLater = nonsense("blabLater");
 console.log(blabLater());
 var blabAgainLater = nonsense("blabAgainLater");
 console.log(blabAgainLater());
+
+// Write a function with a closure. The first function should only take one
+// argument, someone's first name, and the inner function should take one more
+//argument, someone's last name. The inner function should console.log both
+// the first name and the last name.
+
+// var lastNameTrier = function(firstName){
+   //does stuff
+
+//    var innerFunction = function() {
+        //does stuff
+  //  };
+    //maybe returns something here
+// };
+// var firstNameFarmer = lastNameTrier('Farmer'); //logs nothing
+// firstNameFarmer('Brown'); //logs 'Farmer Brown'
+
+var lastNameTrier = function(firstName){
+	var innerFunction = function(lastName) {
+		console.log(firstName + ' ' + lastName);
+  	};
+  	return innerFunction;
+}
+
+ var firstNameFarmer = lastNameTrier('Farmer'); //logs nothing
+ firstNameFarmer('Brown'); //logs 'Farmer Brown'
