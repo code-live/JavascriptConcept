@@ -55,3 +55,13 @@ function nonsense(string) {
 }
 
 nonsense("test this");
+
+// In your function, nonsense, change the immediate call to a setTimeout so
+// that the call to blab comes after 2 seconds. The blab function itself should
+// stay the same as before.
+
+function nonsense(string) {
+  var blab = setTimeout(function() {
+    alert(string);
+  }, 2000);
+}
