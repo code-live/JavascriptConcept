@@ -38,3 +38,20 @@ var sayHelloClosure = sayHello();
 sayHelloClosure();
 
 --------------------------------------------------------------------------------------------------
+
+// Write a function, nonsense that takes an input string. This function contains
+// another function, blab which alerts string and is immediately called inside
+// the function nonsense. blab should look like this inside of the nonsense
+// function:
+
+// var blab = function(){
+//   alert(string);
+//  };
+
+function nonsense(string) {
+  var blab = function() {
+    alert(string);
+  }();
+}
+
+nonsense("test this");
