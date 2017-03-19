@@ -65,3 +65,23 @@ function nonsense(string) {
     alert(string);
   }, 2000);
 }
+
+nonsense("test this");
+
+// Now, instead of calling blab inside of nonsense, return blab (without
+// invoking it). Call nonsense with some string and store the returned value
+// (the blab function) in a variable called blabLater. Call nonsense again with
+// a different string and store the returned value in a variable called
+// blabAgainLater.
+
+function nonsense(string) {
+	var store  = function() {
+				    alert(string);
+				  };
+	return store;			  
+}
+
+var blabLater = nonsense("blabLater");
+console.log(blabLater());
+var blabAgainLater = nonsense("blabAgainLater");
+console.log(blabAgainLater());
