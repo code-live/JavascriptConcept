@@ -1,3 +1,10 @@
+//A closure is a special kind of object that combines two things:
+// a function, and the environment in which that function was created.
+//The environment consists of any local variables that were in-scope at the
+// time that the closure was created. In this case, myFunc is a closure that
+// incorporates both the displayName function and the "Mozilla" string that
+// existed when the closure was created.
+
 function numberGenerator() {
   // Local “free” variable that ends up within the closure
   var num = 1;
@@ -127,12 +134,27 @@ var lastNameTrier = function(firstName){
 // storyOfMyLife.erase(); // ''
 
 function storyWriter() {
-	var text = null;
+	var text = '';
 	var addWords = function(data) {
+		console.log(text + data)
+		text = text + data;
 		return text + data;
+	}
+	var erase = function() {
+		text = '';
+		return text;
 	}
 	return {
 		addWords :  addWords,
-		erase : addWords
+		elrase : erase
 	}
 }
+
+var farmLoveStory = storyWriter();
+farmLoveStory.addWords('There was once a lonely cow.'); // 'There was once a lonely cow.'
+farmLoveStory.addWords('It saw a friendly face.'); //'There was once a lonely cow. It saw a friendly face.'
+
+ var storyOfMyLife = storyWriter();
+ storyOfMyLife.addWords('My code broke.'); // 'My code broke.'
+ storyOfMyLife.addWords('I ate some ice cream.'); //'My code broke. I ate some ice cream.'
+ storyOfMyLife.erase(); // ''
