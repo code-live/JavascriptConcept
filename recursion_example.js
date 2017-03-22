@@ -19,3 +19,22 @@ function storyWriter(num) {
 
 var x = storyWriter(5);
 console.log(x);
+
+
+//Method - 2
+
+function storyWriter(num , res) {
+	res = res || 1;
+	if(num < 0){
+		return 0;
+	}
+	if(num === 0){
+		return res;
+	}
+	res = res * num;
+	return storyWriter(num-1 , res);
+}
+
+var temp;
+var x = storyWriter(5, temp);
+console.log(x);
