@@ -38,3 +38,18 @@ function storyWriter(num , res) {
 var temp;
 var x = storyWriter(5, temp);
 console.log(x);
+
+/*
+Write a JavaScript program to find the greatest common divisor (gcd) 
+of two positive numbers.
+*/
+
+
+function gcd(a, b) {
+  // uses Euclid's algorithm (https://en.wikipedia.org/wiki/Greatest_common_divisor)
+  if (!b) {
+    return a;
+  }
+
+  return gcd(b, a % b);
+}
