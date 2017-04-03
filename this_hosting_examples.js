@@ -1,5 +1,6 @@
 	var foo = 1;
 	function bar() {
+		var text = 1;						// text is in global context variable
 		console.log(window.foo); 				// 1 print
 		console.log(window.bar);				//function body
 		console.log(foo);						// undefined 
