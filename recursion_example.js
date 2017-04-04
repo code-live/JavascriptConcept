@@ -53,3 +53,15 @@ function gcd(a, b) {
 
   return gcd(b, a % b);
 }
+
+//A recursive version countDown
+
+var countdown = function(value) {
+    if (value > 0) {
+        console.log(value);
+        return countdown(value - 1);
+    } else {
+        return value;
+    }
+};
+countdown(10);
